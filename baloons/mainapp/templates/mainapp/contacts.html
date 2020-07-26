@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+              <div class="menu">
+                <h2 class="logo"><a href="/">NETAQUE</a></h2>
+                <a href="/contacts/">Написать нам</a>
+            </div>
+            <a class="cartlink" href="/cart/"><img src="/static/img/cart1.png" alt=""></a>
+             <div class="searchform"><input class="search" type="text" placeholder="Поиск товара" value="">
+                <i class="search-icon"><img src="/static/img/search.svg" alt=""></i></div>
+            <hr style="clear: both">
+        </div>
+        <form action="#">
+            <div class="form">
+                <fieldset>
+                    <legend><b>Напишите нам</b></legend>
+                    <div class="formtext">ФИО <br><input class="inpu" type="text" required placeholder="Введите Ваше ФИО"> <br>
+                        Email <br><input class="inpu" type="text" required placeholder="Ваш Email "> <br>
+                        Тема <br><input class="inpu" type="text" required placeholder="Тема обращения"> <br>
+                        Ваш вопрос <br>
+                        <textarea class="inpu" rows="6" cols="48" placeholder="Введите ваш вопрос"></textarea> <br>
+                    </div>
+                    <div class="contactbutt"><input type="submit"> <input type="reset" value="Удалить"></div>
+                </fieldset>
+            </div>
+        </form>
+        <div class="footer"></div>
+    </div>
+</body></html>

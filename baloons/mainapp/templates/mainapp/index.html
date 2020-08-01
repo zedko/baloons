@@ -1,65 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="menu">
-                <p class="logo"><a href="/">NETAQUE</a></p>
-                <p><a href="/contacts/">Написать нам</a></p>
-            </div>
-            <div class="d1">
-                <a class="cartlink" href="/cart/"><img src="/static/img/cart1.png" alt=""></a>
-                <div class="block">
-                    <div class="fullcartblock">
-          <div class="cartimgblock">
-           <img src="/static/img/0-gold-1-768x768.jpg" alt="">
-           </div>
-            <div class="orderblock">
-            <p><b>102см Фольгированный шар 0</b></p>
-            <p>Артикул 0000</p>
-            <p>Цвет Золотой</p>
-            <p>Количество 1шт.</p>
-            <p><b>Итого 300р</b> </p>
-            </div>
-        </div>
-                 <div class="fullcartblock">
-          <div class="cartimgblock">
-           <img src="/static/img/0-gold-1-768x768.jpg" alt="">
-           </div>
-            <div class="orderblock">
-            <p><b>102см Фольгированный шар 0</b></p>
-            <p>Артикул 0000</p>
-            <p>Цвет Золотой</p>
-            <p>Количество 1шт.</p>
-            <p><b>Итого 300р</b> </p>
-            </div>
-        </div>
-                 <div class="fullcartblock">
-          <div class="cartimgblock">
-           <img src="/static/img/0-gold-1-768x768.jpg" alt="">
-           </div>
-            <div class="orderblock">
-            <p><b>102см Фольгированный шар 0</b></p>
-            <p>Артикул 0000</p>
-            <p>Цвет Золотой</p>
-            <p>Количество 1шт.</p>
-            <p><b>Итого 300р</b> </p>
-            </div>
-        </div>
-                </div>
-            </div>
-            
-            <div class="searchform"><input class="search" type="text" placeholder="Поиск товара" value="">
-                <i class="search-icon"><img src="/static/img/search.svg" alt=""></i></div>
-            <hr style="clear: both">
-        </div>
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block middle %}
         <div class="middle">
             <h2>Каталог товара</h2>
             <div class="items">
@@ -146,6 +87,4 @@
 
             </div>
         </div>
-        <div class="footer"></div>
-    </div>
-</body></html>
+{% endblock %}

@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
-</head>
-
-<body>
-    <div class="container">
-        <div class="header">
-              <div class="menu">
-                <h2 class="logo"><a href="index.html">NETAQUE</a></h2>
-                <a href="contacts.html">Написать нам</a>
-            </div>
-            <a class="cartlink" href="cart.html"><img src="img/cart1.png" alt=""></a>
-             <div class="searchform"><input class="search" type="text" placeholder="Поиск товара" value="">
-                <i class="search-icon"><img src="img/search.svg" alt=""></i></div>
-            <hr style="clear: both">
-        </div>
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block middle %}
         <div class="middle-item">
             <div class="descrip">
                 <div class="slider-pic">
@@ -50,6 +32,4 @@
                 </div>
             </div>
         </div>
-        <div class="footer"></div>
-    </div>
-</body></html>
+{% endblock %}

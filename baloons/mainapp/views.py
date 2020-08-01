@@ -1,10 +1,14 @@
 from django.shortcuts import render
+import json
 
 
 def index(request):
+    with open('static/goods.json', 'r', encoding="utf8") as f:
+        goods = json.load(f)
+
     context = {
         'title': 'main page',
-
+        'goods': goods
     }
     return render(request, 'mainapp/index.html', context)
 
@@ -12,7 +16,6 @@ def index(request):
 def cart(request):
     context = {
         'title': 'cart',
-
     }
     return render(request, 'mainapp/cart.html', context)
 

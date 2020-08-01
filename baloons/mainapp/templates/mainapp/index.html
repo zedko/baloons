@@ -4,86 +4,10 @@
         <div class="middle">
             <h2>Каталог товара</h2>
             <div class="items">
-                <div class="itemblock"><a href="#<!-- item.html-->"><img src="/static/img/0-gold-1-768x768.jpg" alt=""></a>
-                    <p class="text"><a href="#<!--item.html-->">Фольгированный шар 0</a></p>
-                    <p class="color">Золотой</p>
-                    <div class="sel">
-                        <p class="text">300р</p>
-                        <select aria-required="false" class="select">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div class="button"><button class="buttom">Добавить в корзину</button></div>
-                </div>
-                <div class="itemblock"><a href=""><img src="/static/img/1-497x1024-1-768x768.jpg" alt=""></a>
-                    <p class="text"><a href="">Фольгированный шар 1</a></p>
-                    <p class="color">Золотой</p>
-                    <div class="sel">
-                        <p class="text">300р</p>
-                        <select aria-required="false" class="select">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div class="button"><button class="buttom">Добавить в корзину</button></div>
-                </div>
-                <div class="itemblock"><a href=""><img src="/static/img/2-gold-768x768.jpg" alt=""></a>
-                    <p class="text"><a href="">Фольгированный шар 2</a></p>
-                    <p class="color">Золотой</p>
-                    <div class="sel">
-                        <p class="text">300р</p>
-                        <select aria-required="false" class="select">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div class="button"><button class="buttom">Добавить в корзину</button></div>
-                </div>
-                <div class="itemblock"><a href=""><img src="/static/img/3-672x1024-1-768x768.jpg" alt=""></a>
-                    <p class="text"><a href="">Фольгированный шар 3</a></p>
-                    <p class="color">Золотой</p>
-                    <div class="sel">
-                        <p class="text">300р</p>
-                        <select aria-required="false" class="select">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div class="button"><button class="buttom">Добавить в корзину</button></div>
-                </div>
+
+                {% for item in goods.balloons %}
+                    {% include 'mainapp/include/inc_product_card.html' %}
+                {% endfor  %}
 
             </div>
         </div>

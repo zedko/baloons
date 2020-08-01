@@ -21,10 +21,11 @@
         <div class="header">
             <div class="menu">
                 <p class="logo"><a href="/">NETAQUE</a></p>
-                <p><a href="/contacts/">Написать нам</a></p>
+                <p><a href="{% url 'contacts' %}">Написать нам</a></p>
             </div>
+<!--            добавить еще 1 подшаблон для fullcartblock -->
             <div class="d1">
-                <a class="cartlink" href="/cart/"><img src="{% static 'img/cart1.png' %}" alt=""></a>
+                <a class="cartlink" href="{% url 'cart' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
                 <div class="block">
                     <div class="fullcartblock">
                         <div class="cartimgblock">

@@ -1,22 +1,25 @@
 {% extends 'mainapp/base.html' %}
+{% load extra_filters %}
 {% load static %}
 {% block middle %}
         <div class="middle-item">
             <div class="descrip">
                 <div class="slider-pic">
-                    <a href=""><img src="img/0-gold-1-768x768.jpg" alt=""></a>
+                    <a href=""><img src="/media/{{ product.image }}" alt=""></a>
                 </div>
                 <div class="slider-item-text">
-                    <h2>102см Фольгированный шар 0</h2>
+                    <h2>{{ product.short_desc }}</h2>
                     <p class="color">Золотой</p>
-                    <p class="itemtext">The majesty of Mountains - Ugmonk style.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.<br>
+                    <p class="itemtext">{{ product.description }}<br>
                     </p>
-                    <p class="price">Цена 300р</p>
+                    <p class="price">{{ product.price }}</p>
                     <select aria-required="false" class="select">
-                    <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+
+                    {% for i in product.quantity|range %}
+                        <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+
+                    </select>
                    <button data-brackets-id="1876" class="buttom">Добавить в корзину</button>
                     
                 </div>
@@ -26,9 +29,13 @@
                     <h2>Смотрите также</h2>
                 </div>
                 <div class="relatedpics">
-                    <a href="#"><img src="img/1-497x1024-1-768x768.jpg" alt=""></a>
-                    <a href="#"><img src="img/2-gold-768x768.jpg" alt=""></a>
-                    <a href="#"><img src="img/3-672x1024-1-768x768.jpg" alt=""></a>
+
+                    {% for item in suggestions %}
+                        <a href="{% url 'products:product' item.id %}"><img src="/media/{{ item.image }}" alt=""></a>
+<!--                    <a href="#"><img src="img/1-497x1024-1-768x768.jpg" alt=""></a>-->
+<!--                    <a href="#"><img src="img/2-gold-768x768.jpg" alt=""></a>-->
+<!--                    <a href="#"><img src="img/3-672x1024-1-768x768.jpg" alt=""></a>-->
+                    {% endfor %}
                 </div>
             </div>
         </div>

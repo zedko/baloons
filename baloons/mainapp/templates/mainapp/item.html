@@ -32,9 +32,6 @@
 
                     {% for item in suggestions %}
                         <a href="{% url 'products:product' item.id %}"><img src="/media/{{ item.image }}" alt=""></a>
-<!--                    <a href="#"><img src="img/1-497x1024-1-768x768.jpg" alt=""></a>-->
-<!--                    <a href="#"><img src="img/2-gold-768x768.jpg" alt=""></a>-->
-<!--                    <a href="#"><img src="img/3-672x1024-1-768x768.jpg" alt=""></a>-->
                     {% endfor %}
                 </div>
             </div>

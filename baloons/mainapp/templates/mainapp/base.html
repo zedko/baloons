@@ -26,6 +26,7 @@
 <!--            добавить еще 1 подшаблон для fullcartblock -->
             <div class="d1">
                 <a class="cartlink" href="{% url 'cart' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
+                {% include 'mainapp/include/inc_login_logout.html' %}
                 <div class="block">
                     <div class="fullcartblock">
                         <div class="cartimgblock">

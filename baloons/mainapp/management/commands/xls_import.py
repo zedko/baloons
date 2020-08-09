@@ -1,6 +1,6 @@
 from django.core.management import BaseCommand
 from mainapp.models import Product, ProductCategory
-from django.contrib.auth.models import User
+from authapp.models import ShopUser
 import openpyxl
 
 
@@ -53,6 +53,6 @@ class Command(BaseCommand):
 
     def handle(self, path, **options):
         xls_import_products(path)
-        User.objects.create_superuser('django', 'kotnors@mail.ru', 'geekbrains')
+        ShopUser.objects.create_superuser('django', 'kotnors@mail.ru', 'geekbrains', age=90)
 
 

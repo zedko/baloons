@@ -583,3 +583,23 @@ adress > h2 {
     font-size: 17px;
     text-align: left;
 }
+
+.basket-hr {
+    width:25%;
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+
+.basket-counter {
+    font-size: 10px;
+    line-height: 11px;
+    font-weight: bold;
+    background-color:red;
+    width:12px;
+    height:12px;
+    position: absolute;
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+    margin: -2px -2px;
+}

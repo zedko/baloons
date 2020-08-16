@@ -24,10 +24,10 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('', mainapp.index, name='index'),
-    path('cart/', mainapp.cart, name='cart'),
     path('contacts/', mainapp.contacts, name='contacts'),
     path('products/', include('mainapp.urls', namespace='products')),
-    path('auth/', include('authapp.urls', namespace='auth'))
+    path('auth/', include('authapp.urls', namespace='auth')),
+    path('basket/', include('basketapp.urls', namespace='basket'))
 ]
 
 

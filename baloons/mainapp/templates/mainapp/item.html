@@ -20,7 +20,7 @@
                     {% endfor %}
 
                     </select>
-                   <button data-brackets-id="1876" class="button1">Добавить в корзину</button>
+                   <a href="{% url 'basket:add' product.pk %}" class="button1">Добавить в корзину</a>
                     
                 </div>
             </div>

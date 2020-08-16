@@ -28,10 +28,16 @@
                     <i class="search-icon"><img src="/static/img/search.svg" alt=""></i>
                 </div>
                 <div class="d1">
-                    <a class="iconcart" href="{% url 'cart' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
-
+                    <a class="iconcart" href="{% url 'basket:view' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
+                    {% if basket %}
+                        <span class="basket-counter">{{ basket|length }}</span>
+                    {% endif %}
                     <div class="block">
-                        {% include 'mainapp/include/inc_fullcartblock.html' %}
+                        {% if basket %}
+                            {% for item in basket %}
+                                {% include 'basketapp/include/inc_basket_preview_item.html' %}
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
                 {% include 'mainapp/include/inc_login_logout.html' %}

@@ -2,23 +2,28 @@
 {% load static %}
 {% block middle %}
         <div class="middlecart">
-            <div class="emptycart">
-                <h2>Корзина</h2>
-                <p>ВАША КОРЗИНА ПУСТА!</p>
-            </div>
+            <h2>Корзина</h2>
             <div class="fullcart">
                 <div class="itemincart">
-                    {% include 'mainapp/include/inc_cart_product_item.html' %}
+                    {% if basket %}
+                        {% for item in basket %}
+                            {% include 'basketapp/include/inc_basket_product_item.html' %}
+                        {% endfor %}
+                    {% else %}
+                    <div class="emptycart">
+                        <p>ВАША КОРЗИНА ПУСТА!</p>
+                    </div>
+                    {% endif %}
+
                 </div>
                 <div class="orderincart">
-                    <h2>ОФОРМЛЕНИЕ ЗАКАЗА</h2>
-                    <p>ЕСТЬ ПРОМОКОД?</p>
+                    <h2>ПОДЫТОГ</h2>
+<!--                    <p>ЕСТЬ ПРОМОКОД?</p>-->
                     <input type="text" class="inpu" placeholder="Введите промокод">
                     <a href="#" class="buttoncart1">Применить</a>
                     <p><b>Стоимость заказа</b> 600 Руб</p>
                     <p><b>Доставка</b> 199 Руб</p>
-                    <hr>
-                    <br>
+                    <hr class="basket-hr">
                     <p><b>Итого</b> 799 Руб</p><br>
 
                     <div class="description">

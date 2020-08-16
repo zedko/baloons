@@ -3,12 +3,15 @@
 {% block middle %}
         <div class="middle">
             <h2>Каталог товара</h2>
-            <div class="items">
+            <div class="catalogItems">
+                {% include 'mainapp/include/inc_category_filter.html' %}
+                <div class="items">
 
-                {% for item in products %}
-                    {% include 'mainapp/include/inc_product_card.html' %}
-                {% endfor  %}
+                    {% for item in products %}
+                        {% include 'mainapp/include/inc_product_card.html' %}
+                    {% endfor  %}
 
+                </div>
             </div>
         </div>
 {% endblock %}

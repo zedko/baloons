@@ -23,35 +23,11 @@
                 <p class="logo"><a href="/">NETAQUE</a></p>
                 <p><a href="{% url 'contacts' %}">Написать нам</a></p>
             </div>
-<!--            добавить еще 1 подшаблон для fullcartblock -->
             <div class="d1">
                 <a class="cartlink" href="{% url 'cart' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
                 {% include 'mainapp/include/inc_login_logout.html' %}
                 <div class="block">
-                    <div class="fullcartblock">
-                        <div class="cartimgblock">
-                             <img src="{% static 'img/0-gold-1-768x768.jpg' %}" alt="">
-                        </div>
-                        <div class="orderblock">
-                            <p><b>102см Фольгированный шар 0</b></p>
-                            <p>Артикул 0000</p>
-                            <p>Цвет Золотой</p>
-                            <p>Количество 1шт.</p>
-                            <p><b>Итого 300р</b> </p>
-                        </div>
-                    </div>
-                    <div class="fullcartblock">
-                        <div class="cartimgblock">
-                             <img src="/static/img/0-gold-1-768x768.jpg" alt="">
-                        </div>
-                        <div class="orderblock">
-                            <p><b>102см Фольгированный шар 0</b></p>
-                            <p>Артикул 0000</p>
-                            <p>Цвет Золотой</p>
-                            <p>Количество 1шт.</p>
-                            <p><b>Итого 300р</b> </p>
-                        </div>
-                    </div>
+                    {% include 'mainapp/include/inc_fullcartblock.html' %}
                 </div>
             </div>
 

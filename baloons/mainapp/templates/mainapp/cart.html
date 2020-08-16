@@ -7,15 +7,25 @@
                 <p>ВАША КОРЗИНА ПУСТА!</p>
             </div>
             <div class="fullcart">
-                <div class="cartimg">
-                    <img src="/static/img/0-gold-1-768x768.jpg" alt="">
+                <div class="itemincart">
+                    {% include 'mainapp/include/inc_cart_product_item.html' %}
                 </div>
-                <div class="order">
-                    <p><b>102см Фольгированный шар 0</b></p>
-                    <p>Артикул 0000</p>
-                    <p>Цвет Золотой</p>
-                    <p>Количество 1шт.</p>
-                    <p><b>Итого 300р</b> </p>
+                <div class="orderincart">
+                    <h2>ОФОРМЛЕНИЕ ЗАКАЗА</h2>
+                    <p>ЕСТЬ ПРОМОКОД?</p>
+                    <input type="text" class="inpu" placeholder="Введите промокод">
+                    <a href="#" class="buttoncart1">Применить</a>
+                    <p><b>Стоимость заказа</b> 600 Руб</p>
+                    <p><b>Доставка</b> 199 Руб</p>
+                    <hr>
+                    <br>
+                    <p><b>Итого</b> 799 Руб</p><br>
+
+                    <div class="description">
+                        <h4>Мы принимаем</h4> Наличными при получениии <br> <img src="{% static 'img/visa_4.jpg'%}" alt=""> <br>
+                        <p class="BodyTextart"> <span>30-дневный период возврата товара, комиссия за возврат и возврат стоимости за неотправленный товар. Прочитать о</span> <a href="#!" type="button">возврате и возмещении стоимости товара.</a></p>
+                        <a href="#" class="buttoncart">ПЕРЕЙТИ К ОФОРМЛЕНИЮ ЗАКАЗА</a>
+                    </div>
                 </div>
             </div>
         </div>

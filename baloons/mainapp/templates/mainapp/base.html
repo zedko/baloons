@@ -23,16 +23,19 @@
                 <p class="logo"><a href="/">NETAQUE</a></p>
                 <p><a href="{% url 'contacts' %}">Написать нам</a></p>
             </div>
-            <div class="d1">
-                <a class="cartlink" href="{% url 'cart' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
-                {% include 'mainapp/include/inc_login_logout.html' %}
-                <div class="block">
-                    {% include 'mainapp/include/inc_fullcartblock.html' %}
+            <div class="CartSearch">
+                <div class="searchform"><input class="search" type="text" placeholder="Поиск товара" value="">
+                    <i class="search-icon"><img src="/static/img/search.svg" alt=""></i>
                 </div>
-            </div>
+                <div class="d1">
+                    <a class="iconcart" href="{% url 'cart' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
 
-            <div class="searchform"><input class="search" type="text" placeholder="Поиск товара" value="">
-                <i class="search-icon"><img src="/static/img/search.svg" alt=""></i></div>
+                    <div class="block">
+                        {% include 'mainapp/include/inc_fullcartblock.html' %}
+                    </div>
+                </div>
+                {% include 'mainapp/include/inc_login_logout.html' %}
+            </div>
             <hr style="clear: both">
         </div>
         {% endblock %}

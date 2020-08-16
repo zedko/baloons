@@ -131,7 +131,6 @@
 
 
 
-
 .button1,
 .buttoncart,
 .buttoncart1 {
@@ -568,4 +567,19 @@ adress > h2 {
 }
 .categoryFieldset{
     border: none;
+}
+
+.login_icon {
+    width: 45px;
+    float: right;
+}
+
+.login_icon img {
+    max-height: 33px;
+    max-width: 40px;
+}
+
+.login_icon .text {
+    font-size: 17px;
+    text-align: left;
 }

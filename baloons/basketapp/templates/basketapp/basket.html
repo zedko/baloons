@@ -6,9 +6,9 @@
             <div class="fullcart">
                 <div class="itemincart">
                     {% if basket %}
-                        {% for item in basket %}
+
                             {% include 'basketapp/include/inc_basket_product_item.html' %}
-                        {% endfor %}
+
                     {% else %}
                     <div class="emptycart">
                         <p>ВАША КОРЗИНА ПУСТА!</p>
@@ -21,10 +21,10 @@
 <!--                    <p>ЕСТЬ ПРОМОКОД?</p>-->
                     <input type="text" class="inpu" placeholder="Введите промокод">
                     <a href="#" class="buttoncart1">Применить</a>
-                    <p><b>Стоимость заказа</b> {{ basket.0.total_cost|floatformat:2  }} Руб</p>
+                    <p><b>Стоимость заказа</b> <span class="summary_cost">{{ basket.0.total_cost|floatformat:2  }}</span> Руб</p>
                     <p><b>Доставка</b> 0 Руб</p>
                     <hr class="basket-hr">
-                    <p><b>Итого</b> {{ basket.0.total_cost|floatformat:2    }} Руб</p><br>
+                    <p><b>Итого</b> <span class="summary_cost">{{ basket.0.total_cost|floatformat:2    }}</span> Руб</p><br>
 
                     <div class="description">
                         <h4>Мы принимаем</h4> Наличными при получениии <br> <img src="{% static 'img/visa_4.jpg'%}" alt=""> <br>

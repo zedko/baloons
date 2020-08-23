@@ -449,12 +449,6 @@ adress > h2 {
     position: relative;
 }
 
-.CartSearch {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
 
 .orderincart {
     background-color: white;
@@ -481,6 +475,7 @@ adress > h2 {
     display: flex;
     align-items: stretch;
     line-height: 41px;
+    justify-content: center;
 }
 
 .fullcart {
@@ -602,4 +597,61 @@ adress > h2 {
     border-radius: 10px;
     text-align: center;
     margin: -2px -2px;
+}
+
+.CartSearch {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cartLoginIcon{
+    display: flex;
+    flex-direction: row;
+}
+.login_icon{
+    margin-left: 15px;
+}
+
+
+
+
+/* Amount input customization */
+
+.amount span {
+	display:inline-block;
+	width:20px;
+	height:23px;
+	background:#ededed;
+	cursor:pointer;
+	text-align:center;
+    border: 1px solid black;
+
+}
+.amount span:hover {
+	background-color: #9370d8;
+}
+.amount input {
+	width:35px;
+    height: 23px;
+	text-align:center;
+
+}
+.amount{
+    margin-top: 10px;
+}
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.amount {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

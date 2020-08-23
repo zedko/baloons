@@ -9,10 +9,11 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
     {% endblock %}
-        <script href="{% static 'js\jquery-3.5.1.min.js' %}"></script>
-        <script href="{% static 'js\basketapp.js' %}"></script>
-    {% block js %}
 
+    {% block js %}
+        <script type="text/javascript" src="{% static 'js\jquery-3.5.1.min.js' %}"></script>
+        <script defer type="text/javascript" src="{% static 'js\basketapp.js' %}"></script>
+        <script defer type="text/javascript" src="{% static 'js\custom.js' %}"></script>
     {% endblock %}
 </head>
 
@@ -28,20 +29,22 @@
                 <div class="searchform"><input class="search" type="text" placeholder="Поиск товара" value="">
                     <i class="search-icon"><img src="/static/img/search.svg" alt=""></i>
                 </div>
-                <div class="d1">
-                    <a class="iconcart" href="{% url 'basket:view' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
-                    {% if basket %}
-                        <span class="basket-counter">{{ basket|length }}</span>
-                    {% endif %}
-                    <div class="block">
+                <div class="cartLoginIcon">
+                    <div class="d1">
+                        <a class="iconcart" href="{% url 'basket:view' %}"><img src="{% static 'img/cart1.png' %}" alt=""></a>
                         {% if basket %}
-                            {% for item in basket %}
-                                {% include 'basketapp/include/inc_basket_preview_item.html' %}
-                            {% endfor %}
+                            <span class="basket-counter">{{ basket.0.total_quantity }}</span>
                         {% endif %}
+                        <div class="block">
+                            {% if basket %}
+                                {% for item in basket %}
+                                    {% include 'basketapp/include/inc_basket_preview_item.html' %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
                     </div>
-                </div>
                 {% include 'mainapp/include/inc_login_logout.html' %}
+                </div>
             </div>
             <hr style="clear: both">
         </div>

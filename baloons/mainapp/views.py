@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product, ProductCategory
 from basketapp.models import Basket
 
@@ -29,8 +29,7 @@ def contacts(request):
 
 
 def product_page(request, url_key=None):
-    print(url_key)
-    product = Product.objects.filter(id=url_key)[0]
+    product = get_object_or_404(Product, id=url_key)
     title = product.short_desc
     suggestions = Product.objects.all()[:3]
     context = {

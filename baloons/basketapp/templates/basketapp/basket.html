@@ -21,10 +21,10 @@
 <!--                    <p>ЕСТЬ ПРОМОКОД?</p>-->
                     <input type="text" class="inpu" placeholder="Введите промокод">
                     <a href="#" class="buttoncart1">Применить</a>
-                    <p><b>Стоимость заказа</b> 600 Руб</p>
-                    <p><b>Доставка</b> 199 Руб</p>
+                    <p><b>Стоимость заказа</b> {{ basket.0.total_cost|floatformat:2  }} Руб</p>
+                    <p><b>Доставка</b> 0 Руб</p>
                     <hr class="basket-hr">
-                    <p><b>Итого</b> 799 Руб</p><br>
+                    <p><b>Итого</b> {{ basket.0.total_cost|floatformat:2    }} Руб</p><br>
 
                     <div class="description">
                         <h4>Мы принимаем</h4> Наличными при получениии <br> <img src="{% static 'img/visa_4.jpg'%}" alt=""> <br>

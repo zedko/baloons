@@ -46,6 +46,7 @@ def basket_remove(request, pk):
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+# TODO: update basket counter with AJAX when quantity changed
 
 @login_required
 def basket_edit(request, pk, quantity):

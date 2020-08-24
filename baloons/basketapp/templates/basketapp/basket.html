@@ -5,15 +5,8 @@
             <h2>Корзина</h2>
             <div class="fullcart">
                 <div class="itemincart">
-                    {% if basket %}
 
                             {% include 'basketapp/include/inc_basket_product_item.html' %}
-
-                    {% else %}
-                    <div class="emptycart">
-                        <p>ВАША КОРЗИНА ПУСТА!</p>
-                    </div>
-                    {% endif %}
 
                 </div>
                 <div class="orderincart">

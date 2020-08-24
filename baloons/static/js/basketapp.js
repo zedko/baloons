@@ -7,11 +7,11 @@ window.onload = function () {
 var update_basket = function () {
 
         var t_href = event.target;
-        console.log(typeof(t_href))
+
         if (t_href.tagName != "INPUT") {
             t_href = t_href.parentNode.querySelector('input[type=number]')
          }
-        console.log(t_href)
+
         $.ajax({
             url: "/basket/edit/" + t_href.name + "/" + t_href.value + "/",
 
@@ -25,3 +25,4 @@ var update_basket = function () {
 
         event.preventDefault();
     }
+

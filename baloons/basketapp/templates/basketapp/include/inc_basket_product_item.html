@@ -1,0 +1,40 @@
+{% load static %}
+{% load extra_filters %}
+
+{% if basket %}
+
+
+
+
+{% for item in basket %}
+<div class="fullcartitem">
+    <div class="cartimg">
+        <a href="{% url 'products:product' item.product.pk %}"><img src="/media/{{ item.product.image }}" alt=""></a>
+    </div>
+    <div class="order">
+        <p><b>{{ item.product.name }}</b></p>
+<!--        <p>Цвет Золотой</p>-->
+        <p>{{ item.product.short_desc }}</p>
+        <p><b>Итого </b> </p>
+        <div class="selcart">
+
+            <div class="amount">
+                <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="down">-</span>
+                    <input type="number" name="{{ item.pk }}" value="{{ item.quantity }}" min="0" max="{{ item.product.quantity }}">
+                <span onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="up">+</span>
+            </div>
+
+            <p class="text">{{ item.product.price }}</p>
+            <p class="text"><a href="{% url 'basket:remove' item.pk %}" class="">
+              удалить
+            </a></p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+ {% else %}
+<div class="emptycart">
+    <p>ВАША КОРЗИНА ПУСТА!</p>
+</div>
+{% endif %}

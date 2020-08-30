@@ -1,0 +1,11 @@
+{% load static %}
+<div class="fullcartblock">
+    <div class="cartimgblock">
+        <img src="/media/{{item.product.image}}" alt="">
+    </div>
+    <div class="orderblock">
+        <p><b>{{item.product.name}}</b></p>
+        <p>Количество {{item.quantity}}шт.</p>
+        <p><b>{{item.product.price}}</b> </p>
+    </div>
+</div>

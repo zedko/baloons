@@ -20,20 +20,21 @@ def xls_import_products(path):
     ws = open_xls_file(path)
     if not isinstance(ws, FileNotFoundError):
         for row in ws.iter_rows(min_row=2, values_only=True):
-            category = category_check(row[6])
-            # category = ProductCategory.objects.filter(id=row[6])[0]
-            params = {
-                      'name': row[0],
-                      'image': row[1],
-                      'short_desc': row[2],
-                      'description': row[3],
-                      'price': row[4],
-                      'quantity': row[5],
-                      'category': category
-                      }
-            print(f'Adding new product: \n {params}')
-            new_product = Product(**params)
-            new_product.save()
+            if row[0] and row[2]:
+                params = {'reference': row[0], 'image': row[1], 'name': row[2],
+                          'short_desc': row[3], 'description': none_to_empty_str(row[4]), 'color': row[5],
+                          'shape': row[6], 'size': row[7], 'quantity': row[8],
+                          'price': row[9], 'category': category_check(row[10])
+                          }
+                print(params)
+                print(f'Adding new product: \n {params["name"]}')
+                new_product = Product(**params)
+                new_product.save()
+
+
+def none_to_empty_str(cell):
+    if cell is None:
+        return ""
 
 
 def category_check(category_name: str):

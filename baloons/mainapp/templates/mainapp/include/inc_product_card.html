@@ -2,10 +2,10 @@
 {% load extra_filters %}
 <div class="itemblock">
     <a href="{% url 'products:product' item.id %}">
-        <img src="/media/{{ item.image }}" alt="">
+        <img src="{{ item.image|product_image }}" alt="">
     </a>
     <p class="text"><a href="{% url 'products:product' item.id %}">{{item.name}}</a></p>
-    <p class="color">{{item.color}}</p>
+    <p class="color">{{item.color}} {{item.reference}}</p>
     <div class="sel">
         <p class="text">{{item.price}}</p>
 

@@ -1,0 +1,21 @@
+{% extends 'adminapp/base_admin.html' %}
+{% block middle %}
+
+<h2 class="admin_header">Confirm deletion of {{obj_type}}: {{object}}</h2>
+
+<form class="form_horizontal ml-5" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    <input type="hidden" name="model" value="{{obj_type}}">
+    <input type="hidden" name="object" value="{{object.pk}}">
+    <a href="{{ request.META.HTTP_REFERER}}" type="" class="form-control btn btn-primary mb-2 col-2" value="Return">
+        Return
+    </a>
+    <input type="submit" class="form-control btn btn-danger mb-2 col-2" value="Delete">
+
+
+</form>
+
+
+
+{% endblock %}

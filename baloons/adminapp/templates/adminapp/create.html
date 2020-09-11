@@ -1,0 +1,21 @@
+{% extends 'adminapp/base_admin.html' %}
+{% block middle %}
+
+
+
+<form class="form_horizontal ml-5" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="form-control btn btn-primary mb-2 col-2" value="Save">
+
+    <a href="{{ delete_url }}" type="button" class="form-control btn btn-danger mb-2 col-2">
+        Delete
+    </a>
+
+
+</form>
+
+
+
+{% endblock %}

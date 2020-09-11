@@ -1,0 +1,26 @@
+{% extends 'adminapp/base_admin.html' %}
+{% block middle %}
+<hr />
+<h2 class="admin_header">{{ title|title }}</h2>
+
+ <p class="admin_sub_menu  create_link"><a class="admin_url" href="{% url 'admin2:user_create' %}">Create new user</a></p>
+{% for user in user_objects %}
+ <p class="admin_sub_menu">
+     <a class="admin_url {% if user.is_superuser %}superuser{% elif user.is_staff %}staff{% endif %} {% if not user.is_active %}disabled{% endif %}" href="{% url 'admin2:user_update' user.pk %}">
+         {{ user.username }}
+         {% if user.is_superuser %}
+            | SUPERUSER
+         {% elif user.is_staff %}
+            | STAFF
+         {% endif %}
+         {% if user.is_active %}
+            | ACTIVE
+         {% else %}
+            | DISABLED
+         {% endif %}
+    </a>
+ </p>
+{% endfor %}
+
+
+{% endblock %}

@@ -21,7 +21,7 @@ class ShopUserRegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['class'] = 'form-control form-control-sm col-5'
             field.help_text = ''
 
     def clean_age(self):
@@ -34,12 +34,12 @@ class ShopUserRegisterForm(UserCreationForm):
 class ShopUserEditForm(UserChangeForm):
     class Meta:
         model = ShopUser
-        fields = ('username', 'first_name', 'email', 'age', 'avatar', 'password')
+        fields = ('username', 'first_name', 'email', 'age', 'avatar', 'password', 'is_staff', 'is_active')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['class'] = 'form-control form-control-sm col-5'
             field.help_text = ''
             if field_name == 'password':
                 field.widget = forms.HiddenInput()

@@ -3,12 +3,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {% block title %}
     <title>{{ title|title }}</title>
+    {% endblock %}
 
     {% block css %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/fontawesome.css' %}">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
     {% endblock %}
+
 
     {% block js %}
         <script type="text/javascript" src="{% static 'js\jquery-3.5.1.min.js' %}"></script>
@@ -22,7 +27,7 @@
         {% block header %}
         <div class="header">
             <div class="menu">
-                <p class="logo"><a href="/">NETAQUE</a></p>
+                <p class="logo"><a href="{% url 'index' %}">NETAQUE</a></p>
                 <p><a href="{% url 'contacts' %}">Написать нам</a></p>
             </div>
             <div class="CartSearch">

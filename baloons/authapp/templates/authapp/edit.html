@@ -3,15 +3,22 @@
 
 
 {% block content %}
-    <form class="form-horizontal" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
+    <form class="form-horizontal ml-5" action="{% url 'auth:edit' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ edit_form.as_p }}
-        <input class="form-control" type="submit" value="сохранить">
+        <input class="form-control btn btn-primary mb-2 col-2" type="submit" value="сохранить">
     </form>
-    <button class="btn btn-round form-control last">
+    <button class="btn btn-round form-control last" style="width:48%">
         <a href="{% url 'index' %}" class="">
             на главную
         </a>
     </button>
+    {% if user.is_superuser %}
+    <button class="btn btn-round form-control last" style="width:48%">
+        <a href="{% url 'admin2:users' %}" class="">
+            в админку
+        </a>
+    </button>
+    {% endif %}
     <div class="user_avatar"><img src="/media/{{ user.avatar }}"></div>
 {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'adminapp/base_admin.html' %}
+{% block middle %}
+<hr />
+<h2 class="admin_header">{{ title|title }}</h2>
+
+<p class="admin_sub_menu create_link"><a class="admin_url" href="{% url 'admin2:xlsx_import' %}">.xlsx import</a></p>
+<p class="admin_sub_menu create_link"><a class="admin_url" href="{% url 'admin2:product_create' %}">NEW PRODUCT</a></p>
+<p class="admin_sub_menu create_link"><a class="admin_url" href="{% url 'admin2:category_create' %}">NEW CATEGORY</a></p>
+
+{% for category in categories %}
+ <p class="admin_sub_menu">
+     <a class="admin_url" href="{% url 'admin2:category_update' category.pk %}">
+         {{ category.name }}
+     </a>
+
+     <a class="admin_url ml-3" href="{% url 'admin2:products' category.pk %}">
+          Products inside
+     </a>
+ </p>
+{% endfor %}
+
+
+{% endblock %}

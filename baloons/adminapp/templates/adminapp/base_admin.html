@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+	<title>
+        {% block title %}
+            Админка | {{ title|title }}
+        {% endblock %}
+    </title>
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/fontawesome.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/admin_style.css' %}">
+    {% endblock %}
+    {% block js %}
+
+    {% endblock %}
+
+
+</head>
+<body>
+{% block header %}
+<div class="header">
+    <div class="menu">
+        <p class="logo"><a href="/">NETAQUE - Admin panel</a></p>
+        {% include 'adminapp/include/inc_menu.html' %}
+    </div>
+</div>
+{% endblock %}
+{% block middle %}
+
+
+{% endblock %}
+
+
+</body>
+</html>

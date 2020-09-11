@@ -6,7 +6,7 @@ import openpyxl
 
 def open_xls_file(path):
     try:
-        wb = openpyxl.load_workbook(path)
+        wb = openpyxl.load_workbook(filename=path, read_only=True)
         print(f'file {path} opened')
         ws = wb.active
         return ws

@@ -18,7 +18,6 @@ def login(request):
             return HttpResponseRedirect(reverse('index'))
 
     content = {'title': title, 'login_form': login_form}
-    print(f'request:  {request}')
     return render(request, 'authapp/login.html', content)
 
 

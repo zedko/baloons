@@ -1,0 +1,15 @@
+{% extends 'adminapp/base_admin.html' %}
+{% block middle %}
+{% if success %}
+<div class="alert alert-success">Successfully uploaded!</div>
+{% endif %}
+<hr />
+<h2 class="admin_header">{{ title|title }}</h2>
+<form class="form_horizontal ml-5" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+<!--    <input type="file" name="xlsx_file" accept="*" class="form-control col-5" id="id_image">-->
+    {{ file_upload_form }}
+    <input type="submit" class="form-control btn btn-primary mb-2 mt-3 col-2" value="Import !">
+</form>
+
+{% endblock %}
